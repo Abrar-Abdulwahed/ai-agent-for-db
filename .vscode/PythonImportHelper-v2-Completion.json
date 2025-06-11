@@ -1,0 +1,97 @@
+[
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain.schema",
+        "description": "langchain.schema",
+        "isExtraImport": true,
+        "detail": "langchain.schema",
+        "documentation": {}
+    },
+    {
+        "label": "SystemMessage",
+        "importPath": "langchain.schema",
+        "description": "langchain.schema",
+        "isExtraImport": true,
+        "detail": "langchain.schema",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
+        "isExtraImport": true,
+        "detail": "langchain_openai",
+        "documentation": {}
+    },
+    {
+        "label": "first_agent",
+        "kind": 2,
+        "importPath": "basic_agent",
+        "description": "basic_agent",
+        "peekOfCode": "def first_agent(messages):\n    res = model.invoke(messages)\n    return res\ndef run_agent():\n    print(\"Simple AI Agent: Type 'exit' to quit\")\n    while True:\n        user_input = input(\"You: \")\n        if user_input.lower() == \"exit\":\n            print(\"Goodbye!\")\n            break",
+        "detail": "basic_agent",
+        "documentation": {}
+    },
+    {
+        "label": "run_agent",
+        "kind": 2,
+        "importPath": "basic_agent",
+        "description": "basic_agent",
+        "peekOfCode": "def run_agent():\n    print(\"Simple AI Agent: Type 'exit' to quit\")\n    while True:\n        user_input = input(\"You: \")\n        if user_input.lower() == \"exit\":\n            print(\"Goodbye!\")\n            break\n        print(\"AI Agent is thinking...\")\n        messages = [HumanMessage(content=user_input)]\n        response = first_agent(messages)",
+        "detail": "basic_agent",
+        "documentation": {}
+    },
+    {
+        "label": "openai_key",
+        "kind": 5,
+        "importPath": "basic_agent",
+        "description": "basic_agent",
+        "peekOfCode": "openai_key = os.getenv(\"OPENAI_API_KEY\")\nprint(openai_key)\nllm_name = \"gpt-3.5-turbo\"\nmodel = ChatOpenAI(api_key=openai_key, model=llm_name)\nmessages = [\n    # role knowledge base\n    SystemMessage(content=\"You are a helpful assistant who is extremely competent as a Computer Scientist! Your name is Rob.\"),\n    HumanMessage(content=\"who was the very first computer scientist?\")\n]\n# res = model.invoke(messages)",
+        "detail": "basic_agent",
+        "documentation": {}
+    },
+    {
+        "label": "llm_name",
+        "kind": 5,
+        "importPath": "basic_agent",
+        "description": "basic_agent",
+        "peekOfCode": "llm_name = \"gpt-3.5-turbo\"\nmodel = ChatOpenAI(api_key=openai_key, model=llm_name)\nmessages = [\n    # role knowledge base\n    SystemMessage(content=\"You are a helpful assistant who is extremely competent as a Computer Scientist! Your name is Rob.\"),\n    HumanMessage(content=\"who was the very first computer scientist?\")\n]\n# res = model.invoke(messages)\n# print(res)\ndef first_agent(messages):",
+        "detail": "basic_agent",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "basic_agent",
+        "description": "basic_agent",
+        "peekOfCode": "model = ChatOpenAI(api_key=openai_key, model=llm_name)\nmessages = [\n    # role knowledge base\n    SystemMessage(content=\"You are a helpful assistant who is extremely competent as a Computer Scientist! Your name is Rob.\"),\n    HumanMessage(content=\"who was the very first computer scientist?\")\n]\n# res = model.invoke(messages)\n# print(res)\ndef first_agent(messages):\n    res = model.invoke(messages)",
+        "detail": "basic_agent",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "kind": 5,
+        "importPath": "basic_agent",
+        "description": "basic_agent",
+        "peekOfCode": "messages = [\n    # role knowledge base\n    SystemMessage(content=\"You are a helpful assistant who is extremely competent as a Computer Scientist! Your name is Rob.\"),\n    HumanMessage(content=\"who was the very first computer scientist?\")\n]\n# res = model.invoke(messages)\n# print(res)\ndef first_agent(messages):\n    res = model.invoke(messages)\n    return res",
+        "detail": "basic_agent",
+        "documentation": {}
+    }
+]
