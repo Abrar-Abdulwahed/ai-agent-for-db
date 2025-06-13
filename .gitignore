@@ -2,3 +2,4 @@ requirements - Copy.txt
 ./.vscode/
 ./venv
 .env
+./__pycache__

@@ -16,6 +16,22 @@
         "documentation": {}
     },
     {
+        "label": "HumanMessage",
+        "importPath": "langchain.schema",
+        "description": "langchain.schema",
+        "isExtraImport": true,
+        "detail": "langchain.schema",
+        "documentation": {}
+    },
+    {
+        "label": "SystemMessage",
+        "importPath": "langchain.schema",
+        "description": "langchain.schema",
+        "isExtraImport": true,
+        "detail": "langchain.schema",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -33,11 +49,60 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "ChatOpenAI",
         "importPath": "langchain_openai",
         "description": "langchain_openai",
         "isExtraImport": true,
         "detail": "langchain_openai",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
+        "isExtraImport": true,
+        "detail": "langchain_openai",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "openai_key",
+        "importPath": "basic_agent",
+        "description": "basic_agent",
+        "isExtraImport": true,
+        "detail": "basic_agent",
+        "documentation": {}
+    },
+    {
+        "label": "create_pandas_dataframe_agent",
+        "importPath": "langchain_experimental.agents.agent_toolkits",
+        "description": "langchain_experimental.agents.agent_toolkits",
+        "isExtraImport": true,
+        "detail": "langchain_experimental.agents.agent_toolkits",
+        "documentation": {}
+    },
+    {
+        "label": "create_csv_agent",
+        "importPath": "langchain_experimental.agents.agent_toolkits",
+        "description": "langchain_experimental.agents.agent_toolkits",
+        "isExtraImport": true,
+        "detail": "langchain_experimental.agents.agent_toolkits",
         "documentation": {}
     },
     {
@@ -63,7 +128,7 @@
         "kind": 5,
         "importPath": "basic_agent",
         "description": "basic_agent",
-        "peekOfCode": "openai_key = os.getenv(\"OPENAI_API_KEY\")\nprint(openai_key)\nllm_name = \"gpt-3.5-turbo\"\nmodel = ChatOpenAI(api_key=openai_key, model=llm_name)\nmessages = [\n    # role knowledge base\n    SystemMessage(content=\"You are a helpful assistant who is extremely competent as a Computer Scientist! Your name is Rob.\"),\n    HumanMessage(content=\"who was the very first computer scientist?\")\n]\n# res = model.invoke(messages)",
+        "peekOfCode": "openai_key = os.getenv(\"OPENAI_API_KEY\")\nllm_name = \"gpt-3.5-turbo\"\nmodel = ChatOpenAI(api_key=openai_key, model=llm_name)\nmessages = [\n    # role knowledge base\n    SystemMessage(content=\"You are a helpful assistant who is extremely competent as a Computer Scientist! Your name is Rob.\"),\n    HumanMessage(content=\"who was the very first computer scientist?\")\n]\n# res = model.invoke(messages)\n# print(res)",
         "detail": "basic_agent",
         "documentation": {}
     },
@@ -92,6 +157,78 @@
         "description": "basic_agent",
         "peekOfCode": "messages = [\n    # role knowledge base\n    SystemMessage(content=\"You are a helpful assistant who is extremely competent as a Computer Scientist! Your name is Rob.\"),\n    HumanMessage(content=\"who was the very first computer scientist?\")\n]\n# res = model.invoke(messages)\n# print(res)\ndef first_agent(messages):\n    res = model.invoke(messages)\n    return res",
         "detail": "basic_agent",
+        "documentation": {}
+    },
+    {
+        "label": "openai_key",
+        "kind": 5,
+        "importPath": "csv_agent",
+        "description": "csv_agent",
+        "peekOfCode": "openai_key = os.getenv('OPENAI_API_KEY')\nllm_name=\"gpt-3.5-turbo\"\nmodel = ChatOpenAI(api_key=openai_key, model=llm_name)\n# read csv file\ndf = pd.read_csv(\"./data/salaries_2023.csv\").fillna(value=0)\n# gives last 5 rows only\n# print(df.head()) \nagent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,",
+        "detail": "csv_agent",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "csv_agent",
+        "description": "csv_agent",
+        "peekOfCode": "model = ChatOpenAI(api_key=openai_key, model=llm_name)\n# read csv file\ndf = pd.read_csv(\"./data/salaries_2023.csv\").fillna(value=0)\n# gives last 5 rows only\n# print(df.head()) \nagent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,\n    verbose=True,\n)",
+        "detail": "csv_agent",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "csv_agent",
+        "description": "csv_agent",
+        "peekOfCode": "df = pd.read_csv(\"./data/salaries_2023.csv\").fillna(value=0)\n# gives last 5 rows only\n# print(df.head()) \nagent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,\n    verbose=True,\n)\n# res = agent.invoke(\"how many rows are there in the dataframe?\")\n# print(res)",
+        "detail": "csv_agent",
+        "documentation": {}
+    },
+    {
+        "label": "agent",
+        "kind": 5,
+        "importPath": "csv_agent",
+        "description": "csv_agent",
+        "peekOfCode": "agent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,\n    verbose=True,\n)\n# res = agent.invoke(\"how many rows are there in the dataframe?\")\n# print(res)\nCSV_PROMPT_PREFIX = \"\"\"\nFirst set the pandas display options to show all the columns,\nget the column names, then answer the question.",
+        "detail": "csv_agent",
+        "documentation": {}
+    },
+    {
+        "label": "CSV_PROMPT_PREFIX",
+        "kind": 5,
+        "importPath": "csv_agent",
+        "description": "csv_agent",
+        "peekOfCode": "CSV_PROMPT_PREFIX = \"\"\"\nFirst set the pandas display options to show all the columns,\nget the column names, then answer the question.\n\"\"\"\nCSV_PROMPT_SUFFIX = \"\"\"\n- **ALWAYS** before giving the Final Answer, try another method.\nThen reflect on the answers of the two methods you did and ask yourself\nif it answers correctly the original question.\nIf you are not sure, try another method.\nFORMAT 4 FIGURES OR MORE WITH COMMAS.",
+        "detail": "csv_agent",
+        "documentation": {}
+    },
+    {
+        "label": "CSV_PROMPT_SUFFIX",
+        "kind": 5,
+        "importPath": "csv_agent",
+        "description": "csv_agent",
+        "peekOfCode": "CSV_PROMPT_SUFFIX = \"\"\"\n- **ALWAYS** before giving the Final Answer, try another method.\nThen reflect on the answers of the two methods you did and ask yourself\nif it answers correctly the original question.\nIf you are not sure, try another method.\nFORMAT 4 FIGURES OR MORE WITH COMMAS.\n- If the methods tried do not give the same result,reflect and\ntry again until you have two methods that have the same result.\n- If you still cannot arrive to a consistent result, say that\nyou are not sure of the answer.",
+        "detail": "csv_agent",
+        "documentation": {}
+    },
+    {
+        "label": "QUESTION",
+        "kind": 5,
+        "importPath": "csv_agent",
+        "description": "csv_agent",
+        "peekOfCode": "QUESTION = \"Which grade has the highest average base salary, and compare the average female pay vs male pay?\"\nres = agent.invoke(CSV_PROMPT_PREFIX + QUESTION + CSV_PROMPT_SUFFIX)\nprint(f\"Final result: {res[\"output\"]}\")",
+        "detail": "csv_agent",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "csv_agent",
+        "description": "csv_agent",
+        "peekOfCode": "res = agent.invoke(CSV_PROMPT_PREFIX + QUESTION + CSV_PROMPT_SUFFIX)\nprint(f\"Final result: {res[\"output\"]}\")",
+        "detail": "csv_agent",
         "documentation": {}
     }
 ]
