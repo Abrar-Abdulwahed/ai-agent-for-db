@@ -77,3 +77,5 @@ if st.button("Run Query"):
     res = agent.invoke(QUERY)
     st.write("### Final Answer")
     st.markdown(res["output"])
+
+# streamlit run csv_agent.py

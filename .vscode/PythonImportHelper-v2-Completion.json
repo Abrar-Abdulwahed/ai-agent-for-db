@@ -57,6 +57,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "ChatOpenAI",
         "importPath": "langchain_openai",
         "description": "langchain_openai",
@@ -112,6 +120,14 @@
         "importPath": "streamlit",
         "description": "streamlit",
         "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
@@ -238,6 +254,42 @@
         "description": "csv_agent",
         "peekOfCode": "question = st.text_input(\n    \"Enter your question about the dataset:\",\n    \"Which grade has the highest average base salary, and compare the average female pay vs male pay?\",\n)\n# Run the agent and display the result\nif st.button(\"Run Query\"):\n    QUERY = CSV_PROMPT_PREFIX + question + CSV_PROMPT_SUFFIX\n    res = agent.invoke(QUERY)\n    st.write(\"### Final Answer\")\n    st.markdown(res[\"output\"])",
         "detail": "csv_agent",
+        "documentation": {}
+    },
+    {
+        "label": "database_file_path",
+        "kind": 5,
+        "importPath": "csv_to_sql",
+        "description": "csv_to_sql",
+        "peekOfCode": "database_file_path = \"./db/salary.db\"\n# Create an engine to connect to the SQLite database\n# SQLite only requires the path to the database file\nengine = create_engine(f\"sqlite:///{database_file_path}\")\nfile_url = \"./data/salaries_2023.csv\"\nos.makedirs(os.path.dirname(database_file_path), exist_ok=True)\ndf = pd.read_csv(file_url).fillna(value=0)\ndf.to_sql(\"salaries_2023\", con=engine, if_exists=\"replace\", index=False)",
+        "detail": "csv_to_sql",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "csv_to_sql",
+        "description": "csv_to_sql",
+        "peekOfCode": "engine = create_engine(f\"sqlite:///{database_file_path}\")\nfile_url = \"./data/salaries_2023.csv\"\nos.makedirs(os.path.dirname(database_file_path), exist_ok=True)\ndf = pd.read_csv(file_url).fillna(value=0)\ndf.to_sql(\"salaries_2023\", con=engine, if_exists=\"replace\", index=False)",
+        "detail": "csv_to_sql",
+        "documentation": {}
+    },
+    {
+        "label": "file_url",
+        "kind": 5,
+        "importPath": "csv_to_sql",
+        "description": "csv_to_sql",
+        "peekOfCode": "file_url = \"./data/salaries_2023.csv\"\nos.makedirs(os.path.dirname(database_file_path), exist_ok=True)\ndf = pd.read_csv(file_url).fillna(value=0)\ndf.to_sql(\"salaries_2023\", con=engine, if_exists=\"replace\", index=False)",
+        "detail": "csv_to_sql",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "csv_to_sql",
+        "description": "csv_to_sql",
+        "peekOfCode": "df = pd.read_csv(file_url).fillna(value=0)\ndf.to_sql(\"salaries_2023\", con=engine, if_exists=\"replace\", index=False)",
+        "detail": "csv_to_sql",
         "documentation": {}
     }
 ]
