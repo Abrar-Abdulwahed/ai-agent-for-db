@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from basic_agent import openai_key
 from langchain_experimental.agents.agent_toolkits import (create_pandas_dataframe_agent, create_csv_agent)
+import streamlit as st
 
 
 load_dotenv()
@@ -23,6 +24,7 @@ agent = create_pandas_dataframe_agent(
     llm=model,
     df=df,
     verbose=True,
+    allow_dangerous_code=True # => locally only (security risk)
 )
 # res = agent.invoke("how many rows are there in the dataframe?")
 
@@ -54,6 +56,24 @@ to the final answer.
 """
 QUESTION = "Which grade has the highest average base salary, and compare the average female pay vs male pay?"
 
-res = agent.invoke(CSV_PROMPT_PREFIX + QUESTION + CSV_PROMPT_SUFFIX)
+# res = agent.invoke(CSV_PROMPT_PREFIX + QUESTION + CSV_PROMPT_SUFFIX)
 
-print(f"Final result: {res["output"]}")
+# print(f"Final result: {res["output"]}")
+
+st.title('Database agent with LangChain')
+st.write("### Dataset Preview")
+st.write(df.head())
+
+# User input for the question
+st.write("### Ask a Question")
+question = st.text_input(
+    "Enter your question about the dataset:",
+    "Which grade has the highest average base salary, and compare the average female pay vs male pay?",
+)
+
+# Run the agent and display the result
+if st.button("Run Query"):
+    QUERY = CSV_PROMPT_PREFIX + question + CSV_PROMPT_SUFFIX
+    res = agent.invoke(QUERY)
+    st.write("### Final Answer")
+    st.markdown(res["output"])

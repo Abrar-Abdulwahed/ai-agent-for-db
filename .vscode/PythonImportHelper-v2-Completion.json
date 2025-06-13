@@ -106,6 +106,15 @@
         "documentation": {}
     },
     {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
         "label": "first_agent",
         "kind": 2,
         "importPath": "basic_agent",
@@ -173,7 +182,7 @@
         "kind": 5,
         "importPath": "csv_agent",
         "description": "csv_agent",
-        "peekOfCode": "model = ChatOpenAI(api_key=openai_key, model=llm_name)\n# read csv file\ndf = pd.read_csv(\"./data/salaries_2023.csv\").fillna(value=0)\n# gives last 5 rows only\n# print(df.head()) \nagent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,\n    verbose=True,\n)",
+        "peekOfCode": "model = ChatOpenAI(api_key=openai_key, model=llm_name)\n# read csv file\ndf = pd.read_csv(\"./data/salaries_2023.csv\").fillna(value=0)\n# gives last 5 rows only\n# print(df.head()) \nagent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,\n    verbose=True,\n    allow_dangerous_code=True # => locally only (security risk)",
         "detail": "csv_agent",
         "documentation": {}
     },
@@ -182,7 +191,7 @@
         "kind": 5,
         "importPath": "csv_agent",
         "description": "csv_agent",
-        "peekOfCode": "df = pd.read_csv(\"./data/salaries_2023.csv\").fillna(value=0)\n# gives last 5 rows only\n# print(df.head()) \nagent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,\n    verbose=True,\n)\n# res = agent.invoke(\"how many rows are there in the dataframe?\")\n# print(res)",
+        "peekOfCode": "df = pd.read_csv(\"./data/salaries_2023.csv\").fillna(value=0)\n# gives last 5 rows only\n# print(df.head()) \nagent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,\n    verbose=True,\n    allow_dangerous_code=True # => locally only (security risk)\n)\n# res = agent.invoke(\"how many rows are there in the dataframe?\")",
         "detail": "csv_agent",
         "documentation": {}
     },
@@ -191,7 +200,7 @@
         "kind": 5,
         "importPath": "csv_agent",
         "description": "csv_agent",
-        "peekOfCode": "agent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,\n    verbose=True,\n)\n# res = agent.invoke(\"how many rows are there in the dataframe?\")\n# print(res)\nCSV_PROMPT_PREFIX = \"\"\"\nFirst set the pandas display options to show all the columns,\nget the column names, then answer the question.",
+        "peekOfCode": "agent = create_pandas_dataframe_agent(\n    llm=model,\n    df=df,\n    verbose=True,\n    allow_dangerous_code=True # => locally only (security risk)\n)\n# res = agent.invoke(\"how many rows are there in the dataframe?\")\n# print(res)\nCSV_PROMPT_PREFIX = \"\"\"\nFirst set the pandas display options to show all the columns,",
         "detail": "csv_agent",
         "documentation": {}
     },
@@ -218,16 +227,16 @@
         "kind": 5,
         "importPath": "csv_agent",
         "description": "csv_agent",
-        "peekOfCode": "QUESTION = \"Which grade has the highest average base salary, and compare the average female pay vs male pay?\"\nres = agent.invoke(CSV_PROMPT_PREFIX + QUESTION + CSV_PROMPT_SUFFIX)\nprint(f\"Final result: {res[\"output\"]}\")",
+        "peekOfCode": "QUESTION = \"Which grade has the highest average base salary, and compare the average female pay vs male pay?\"\n# res = agent.invoke(CSV_PROMPT_PREFIX + QUESTION + CSV_PROMPT_SUFFIX)\n# print(f\"Final result: {res[\"output\"]}\")\nst.title('Database agent with LangChain')\nst.write(\"### Dataset Preview\")\nst.write(df.head())\n# User input for the question\nst.write(\"### Ask a Question\")\nquestion = st.text_input(\n    \"Enter your question about the dataset:\",",
         "detail": "csv_agent",
         "documentation": {}
     },
     {
-        "label": "res",
+        "label": "question",
         "kind": 5,
         "importPath": "csv_agent",
         "description": "csv_agent",
-        "peekOfCode": "res = agent.invoke(CSV_PROMPT_PREFIX + QUESTION + CSV_PROMPT_SUFFIX)\nprint(f\"Final result: {res[\"output\"]}\")",
+        "peekOfCode": "question = st.text_input(\n    \"Enter your question about the dataset:\",\n    \"Which grade has the highest average base salary, and compare the average female pay vs male pay?\",\n)\n# Run the agent and display the result\nif st.button(\"Run Query\"):\n    QUERY = CSV_PROMPT_PREFIX + question + CSV_PROMPT_SUFFIX\n    res = agent.invoke(QUERY)\n    st.write(\"### Final Answer\")\n    st.markdown(res[\"output\"])",
         "detail": "csv_agent",
         "documentation": {}
     }
