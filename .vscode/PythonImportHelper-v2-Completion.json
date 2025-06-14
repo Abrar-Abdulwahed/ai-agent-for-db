@@ -81,6 +81,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "ChatOpenAI",
         "importPath": "langchain_openai",
         "description": "langchain_openai",
@@ -163,6 +171,38 @@
         "documentation": {}
     },
     {
+        "label": "text",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -177,6 +217,72 @@
         "description": "openai",
         "isExtraImport": true,
         "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "helpers",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "helpers",
+        "description": "helpers",
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_avg_salary_and_female_count_for_division",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_total_overtime_pay_for_department",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_total_longevity_pay_for_grade",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_employee_count_by_gender_in_department",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_employees_with_overtime_above",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
         "documentation": {}
     },
     {
@@ -399,6 +505,150 @@
         "description": "func_call",
         "peekOfCode": "client = OpenAI(api_key=openai_key)\n# Example dummy function hard coded to return the same weather\n# In production, this could be your backend API or an external API\ndef get_current_weather(location, unit=\"fahrenheit\"):\n    \"\"\"Get the current weather in a given location\"\"\"\n    if \"tokyo\" in location.lower():\n        return json.dumps({\"location\": \"Tokyo\", \"temperature\": \"10\", \"unit\": unit})\n    elif \"san francisco\" in location.lower():\n        return json.dumps(\n            {\"location\": \"San Francisco\", \"temperature\": \"72\", \"unit\": unit}",
         "detail": "func_call",
+        "documentation": {}
+    },
+    {
+        "label": "run_conversation",
+        "kind": 2,
+        "importPath": "func_call_db_agent",
+        "description": "func_call_db_agent",
+        "peekOfCode": "def run_conversation(\n    query=\"\"\"What is the average salary and the count of female employees\n    #                   in the ABS 85 Administrative Services division?\"\"\",\n):\n    messages = [\n        {\n            \"role\": \"user\",\n            \"content\": query,\n        },\n    ]",
+        "detail": "func_call_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "openai_key",
+        "kind": 5,
+        "importPath": "func_call_db_agent",
+        "description": "func_call_db_agent",
+        "peekOfCode": "openai_key = os.getenv(\"OPENAI_API_KEY\")\nllm_name = \"gpt-3.5-turbo\"\n# for the weather function calling\nclient = OpenAI(api_key=openai_key)\n# create a db from csv file\n# Path to your SQLite database file\ndatabase_file_path = \"./db/salary.db\"\n# Create an engine to connect to the SQLite database\n# SQLite only requires the path to the database file\nengine = create_engine(f\"sqlite:///{database_file_path}\")",
+        "detail": "func_call_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "llm_name",
+        "kind": 5,
+        "importPath": "func_call_db_agent",
+        "description": "func_call_db_agent",
+        "peekOfCode": "llm_name = \"gpt-3.5-turbo\"\n# for the weather function calling\nclient = OpenAI(api_key=openai_key)\n# create a db from csv file\n# Path to your SQLite database file\ndatabase_file_path = \"./db/salary.db\"\n# Create an engine to connect to the SQLite database\n# SQLite only requires the path to the database file\nengine = create_engine(f\"sqlite:///{database_file_path}\")\nfile_url = \"./data/salaries_2023.csv\"",
+        "detail": "func_call_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "func_call_db_agent",
+        "description": "func_call_db_agent",
+        "peekOfCode": "client = OpenAI(api_key=openai_key)\n# create a db from csv file\n# Path to your SQLite database file\ndatabase_file_path = \"./db/salary.db\"\n# Create an engine to connect to the SQLite database\n# SQLite only requires the path to the database file\nengine = create_engine(f\"sqlite:///{database_file_path}\")\nfile_url = \"./data/salaries_2023.csv\"\nos.makedirs(os.path.dirname(database_file_path), exist_ok=True)\ndf = pd.read_csv(file_url).fillna(value=0)",
+        "detail": "func_call_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "database_file_path",
+        "kind": 5,
+        "importPath": "func_call_db_agent",
+        "description": "func_call_db_agent",
+        "peekOfCode": "database_file_path = \"./db/salary.db\"\n# Create an engine to connect to the SQLite database\n# SQLite only requires the path to the database file\nengine = create_engine(f\"sqlite:///{database_file_path}\")\nfile_url = \"./data/salaries_2023.csv\"\nos.makedirs(os.path.dirname(database_file_path), exist_ok=True)\ndf = pd.read_csv(file_url).fillna(value=0)\ndf.to_sql(\"salaries_2023\", con=engine, if_exists=\"replace\", index=False)\ndef run_conversation(\n    query=\"\"\"What is the average salary and the count of female employees",
+        "detail": "func_call_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "func_call_db_agent",
+        "description": "func_call_db_agent",
+        "peekOfCode": "engine = create_engine(f\"sqlite:///{database_file_path}\")\nfile_url = \"./data/salaries_2023.csv\"\nos.makedirs(os.path.dirname(database_file_path), exist_ok=True)\ndf = pd.read_csv(file_url).fillna(value=0)\ndf.to_sql(\"salaries_2023\", con=engine, if_exists=\"replace\", index=False)\ndef run_conversation(\n    query=\"\"\"What is the average salary and the count of female employees\n    #                   in the ABS 85 Administrative Services division?\"\"\",\n):\n    messages = [",
+        "detail": "func_call_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "file_url",
+        "kind": 5,
+        "importPath": "func_call_db_agent",
+        "description": "func_call_db_agent",
+        "peekOfCode": "file_url = \"./data/salaries_2023.csv\"\nos.makedirs(os.path.dirname(database_file_path), exist_ok=True)\ndf = pd.read_csv(file_url).fillna(value=0)\ndf.to_sql(\"salaries_2023\", con=engine, if_exists=\"replace\", index=False)\ndef run_conversation(\n    query=\"\"\"What is the average salary and the count of female employees\n    #                   in the ABS 85 Administrative Services division?\"\"\",\n):\n    messages = [\n        {",
+        "detail": "func_call_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "func_call_db_agent",
+        "description": "func_call_db_agent",
+        "peekOfCode": "df = pd.read_csv(file_url).fillna(value=0)\ndf.to_sql(\"salaries_2023\", con=engine, if_exists=\"replace\", index=False)\ndef run_conversation(\n    query=\"\"\"What is the average salary and the count of female employees\n    #                   in the ABS 85 Administrative Services division?\"\"\",\n):\n    messages = [\n        {\n            \"role\": \"user\",\n            \"content\": query,",
+        "detail": "func_call_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "get_avg_salary_and_female_count_for_division",
+        "kind": 2,
+        "importPath": "helpers",
+        "description": "helpers",
+        "peekOfCode": "def get_avg_salary_and_female_count_for_division(division_name):\n    try:\n        query = f\"\"\"\n        SELECT AVG(Base_Salary) AS avg_salary, COUNT(*) AS female_count\n        FROM salaries_2023\n        WHERE Division = '{division_name}' AND Gender = 'F';\n        \"\"\"\n        query = text(query)\n        with engine.connect() as connection:\n            result = pd.read_sql_query(query, connection)",
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_total_overtime_pay_for_department",
+        "kind": 2,
+        "importPath": "helpers",
+        "description": "helpers",
+        "peekOfCode": "def get_total_overtime_pay_for_department(department_name):\n    try:\n        query = f\"\"\"\n        SELECT SUM(Overtime_Pay) AS total_overtime_pay\n        FROM salaries_2023\n        WHERE Department_Name = '{department_name}';\n        \"\"\"\n        query = text(query)\n        with engine.connect() as connection:\n            result = pd.read_sql_query(query, connection)",
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_employees_with_overtime_above",
+        "kind": 2,
+        "importPath": "helpers",
+        "description": "helpers",
+        "peekOfCode": "def get_employees_with_overtime_above(amount):\n    try:\n        query = f\"\"\"\n        SELECT * \n        FROM salaries_2023\n        WHERE Overtime_Pay > {amount};\n        \"\"\"\n        query = text(query)\n        with engine.connect() as connection:\n            result = pd.read_sql_query(query, connection)",
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_employee_count_by_gender_in_department",
+        "kind": 2,
+        "importPath": "helpers",
+        "description": "helpers",
+        "peekOfCode": "def get_employee_count_by_gender_in_department(department_name):\n    try:\n        query = f\"\"\"\n        SELECT Gender, COUNT(*) AS employee_count\n        FROM salaries_2023\n        WHERE Department_Name = '{department_name}'\n        GROUP BY Gender;\n        \"\"\"\n        query = text(query)\n        with engine.connect() as connection:",
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_total_longevity_pay_for_grade",
+        "kind": 2,
+        "importPath": "helpers",
+        "description": "helpers",
+        "peekOfCode": "def get_total_longevity_pay_for_grade(grade):\n    try:\n        query = f\"\"\"\n        SELECT SUM(Longevity_Pay) AS total_longevity_pay\n        FROM salaries_2023\n        WHERE Grade = '{grade}';\n        \"\"\"\n        query = text(query)\n        with engine.connect() as connection:\n            result = pd.read_sql_query(query, connection)",
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "database_file_path",
+        "kind": 5,
+        "importPath": "helpers",
+        "description": "helpers",
+        "peekOfCode": "database_file_path = \"./db/salary.db\"\nengine = create_engine(f\"sqlite:///{database_file_path}\")\ntools_sql = [\n    {\n        \"type\": \"function\",\n        \"function\": {\n            \"name\": \"get_avg_salary_and_female_count_for_division\",\n            \"description\": \"\"\"Retrieves the average salary and the count of \n                              female employees in a specific division.\"\"\",\n            \"parameters\": {",
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "helpers",
+        "description": "helpers",
+        "peekOfCode": "engine = create_engine(f\"sqlite:///{database_file_path}\")\ntools_sql = [\n    {\n        \"type\": \"function\",\n        \"function\": {\n            \"name\": \"get_avg_salary_and_female_count_for_division\",\n            \"description\": \"\"\"Retrieves the average salary and the count of \n                              female employees in a specific division.\"\"\",\n            \"parameters\": {\n                \"type\": \"object\",",
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "tools_sql",
+        "kind": 5,
+        "importPath": "helpers",
+        "description": "helpers",
+        "peekOfCode": "tools_sql = [\n    {\n        \"type\": \"function\",\n        \"function\": {\n            \"name\": \"get_avg_salary_and_female_count_for_division\",\n            \"description\": \"\"\"Retrieves the average salary and the count of \n                              female employees in a specific division.\"\"\",\n            \"parameters\": {\n                \"type\": \"object\",\n                \"properties\": {",
+        "detail": "helpers",
         "documentation": {}
     },
     {
