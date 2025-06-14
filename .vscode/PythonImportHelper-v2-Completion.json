@@ -73,6 +73,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "ChatOpenAI",
         "importPath": "langchain_openai",
         "description": "langchain_openai",
@@ -152,6 +160,23 @@
         "description": "sqlalchemy",
         "isExtraImport": true,
         "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
         "documentation": {}
     },
     {
@@ -338,6 +363,42 @@
         "description": "csv_to_sql",
         "peekOfCode": "df = pd.read_csv(file_url).fillna(value=0)\ndf.to_sql(\"salaries_2023\", con=engine, if_exists=\"replace\", index=False)",
         "detail": "csv_to_sql",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_weather",
+        "kind": 2,
+        "importPath": "func_call",
+        "description": "func_call",
+        "peekOfCode": "def get_current_weather(location, unit=\"fahrenheit\"):\n    \"\"\"Get the current weather in a given location\"\"\"\n    if \"tokyo\" in location.lower():\n        return json.dumps({\"location\": \"Tokyo\", \"temperature\": \"10\", \"unit\": unit})\n    elif \"san francisco\" in location.lower():\n        return json.dumps(\n            {\"location\": \"San Francisco\", \"temperature\": \"72\", \"unit\": unit}\n        )\n    elif \"paris\" in location.lower():\n        return json.dumps({\"location\": \"Paris\", \"temperature\": \"22\", \"unit\": unit})",
+        "detail": "func_call",
+        "documentation": {}
+    },
+    {
+        "label": "run_conversation",
+        "kind": 2,
+        "importPath": "func_call",
+        "description": "func_call",
+        "peekOfCode": "def run_conversation():\n    # Step 1: send the conversation and available functions to the model\n    messages = [\n        {\n            \"role\": \"user\",\n            \"content\": \"What's the weather like in San Francisco, Tokyo, and Paris?\",\n        }\n    ]\n    # Define the available functions\n    tools = [",
+        "detail": "func_call",
+        "documentation": {}
+    },
+    {
+        "label": "openai_key",
+        "kind": 5,
+        "importPath": "func_call",
+        "description": "func_call",
+        "peekOfCode": "openai_key = os.getenv(\"OPENAI_API_KEY\")\n# for the weather function calling\nclient = OpenAI(api_key=openai_key)\n# Example dummy function hard coded to return the same weather\n# In production, this could be your backend API or an external API\ndef get_current_weather(location, unit=\"fahrenheit\"):\n    \"\"\"Get the current weather in a given location\"\"\"\n    if \"tokyo\" in location.lower():\n        return json.dumps({\"location\": \"Tokyo\", \"temperature\": \"10\", \"unit\": unit})\n    elif \"san francisco\" in location.lower():",
+        "detail": "func_call",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "func_call",
+        "description": "func_call",
+        "peekOfCode": "client = OpenAI(api_key=openai_key)\n# Example dummy function hard coded to return the same weather\n# In production, this could be your backend API or an external API\ndef get_current_weather(location, unit=\"fahrenheit\"):\n    \"\"\"Get the current weather in a given location\"\"\"\n    if \"tokyo\" in location.lower():\n        return json.dumps({\"location\": \"Tokyo\", \"temperature\": \"10\", \"unit\": unit})\n    elif \"san francisco\" in location.lower():\n        return json.dumps(\n            {\"location\": \"San Francisco\", \"temperature\": \"72\", \"unit\": unit}",
+        "detail": "func_call",
         "documentation": {}
     },
     {
