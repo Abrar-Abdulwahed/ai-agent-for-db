@@ -1,5 +1,30 @@
 [
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain.schema",
+        "description": "langchain.schema",
+        "isExtraImport": true,
+        "detail": "langchain.schema",
+        "documentation": {}
+    },
+    {
+        "label": "SystemMessage",
+        "importPath": "langchain.schema",
+        "description": "langchain.schema",
+        "isExtraImport": true,
+        "detail": "langchain.schema",
+        "documentation": {}
+    },
+    {
         "label": "HumanMessage",
         "importPath": "langchain.schema",
         "description": "langchain.schema",
@@ -89,6 +114,22 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
+        "isExtraImport": true,
+        "detail": "langchain_openai",
+        "documentation": {}
+    },
+    {
         "label": "ChatOpenAI",
         "importPath": "langchain_openai",
         "description": "langchain_openai",
@@ -122,36 +163,19 @@
         "documentation": {}
     },
     {
-        "label": "openai_key",
-        "importPath": "basic_agent",
-        "description": "basic_agent",
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
         "isExtraImport": true,
-        "detail": "basic_agent",
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
-        "label": "create_pandas_dataframe_agent",
-        "importPath": "langchain_experimental.agents.agent_toolkits",
-        "description": "langchain_experimental.agents.agent_toolkits",
+        "label": "text",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
         "isExtraImport": true,
-        "detail": "langchain_experimental.agents.agent_toolkits",
-        "documentation": {}
-    },
-    {
-        "label": "create_csv_agent",
-        "importPath": "langchain_experimental.agents.agent_toolkits",
-        "description": "langchain_experimental.agents.agent_toolkits",
-        "isExtraImport": true,
-        "detail": "langchain_experimental.agents.agent_toolkits",
-        "documentation": {}
-    },
-    {
-        "label": "streamlit",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "streamlit",
-        "description": "streamlit",
-        "detail": "streamlit",
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
@@ -200,31 +224,6 @@
         "description": "sqlalchemy",
         "isExtraImport": true,
         "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
-        "documentation": {}
-    },
-    {
-        "label": "OpenAI",
-        "importPath": "openai",
-        "description": "openai",
-        "isExtraImport": true,
-        "detail": "openai",
-        "documentation": {}
-    },
-    {
-        "label": "OpenAI",
-        "importPath": "openai",
-        "description": "openai",
-        "isExtraImport": true,
-        "detail": "openai",
         "documentation": {}
     },
     {
@@ -234,6 +233,39 @@
         "importPath": "numpy",
         "description": "numpy",
         "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
         "documentation": {}
     },
     {
@@ -286,6 +318,79 @@
         "documentation": {}
     },
     {
+        "label": "get_avg_salary_and_female_count_for_division",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_total_overtime_pay_for_department",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_total_longevity_pay_for_grade",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_employee_count_by_gender_in_department",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "get_employees_with_overtime_above",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "openai_key",
+        "importPath": "basic_agent",
+        "description": "basic_agent",
+        "isExtraImport": true,
+        "detail": "basic_agent",
+        "documentation": {}
+    },
+    {
+        "label": "create_pandas_dataframe_agent",
+        "importPath": "langchain_experimental.agents.agent_toolkits",
+        "description": "langchain_experimental.agents.agent_toolkits",
+        "isExtraImport": true,
+        "detail": "langchain_experimental.agents.agent_toolkits",
+        "documentation": {}
+    },
+    {
+        "label": "create_csv_agent",
+        "importPath": "langchain_experimental.agents.agent_toolkits",
+        "description": "langchain_experimental.agents.agent_toolkits",
+        "isExtraImport": true,
+        "detail": "langchain_experimental.agents.agent_toolkits",
+        "documentation": {}
+    },
+    {
         "label": "create_sql_agent",
         "importPath": "langchain_community.agent_toolkits.sql.base",
         "description": "langchain_community.agent_toolkits.sql.base",
@@ -307,6 +412,114 @@
         "description": "langchain_community.utilities",
         "isExtraImport": true,
         "detail": "langchain_community.utilities",
+        "documentation": {}
+    },
+    {
+        "label": "openai_key",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "openai_key = os.getenv(\"OPENAI_API_KEY\")\nllm_name = \"gpt-3.5-turbo\"\nmodel = ChatOpenAI(api_key=openai_key, model=llm_name)\n# for the weather function calling\nclient = OpenAI(api_key=openai_key)\n# Step 1: create the assistant\nassistant = client.beta.assistants.create(\n    name=\"Salary Assistant\",\n    description=\"Assistant to help with salary data\",\n    model=llm_name,",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "llm_name",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "llm_name = \"gpt-3.5-turbo\"\nmodel = ChatOpenAI(api_key=openai_key, model=llm_name)\n# for the weather function calling\nclient = OpenAI(api_key=openai_key)\n# Step 1: create the assistant\nassistant = client.beta.assistants.create(\n    name=\"Salary Assistant\",\n    description=\"Assistant to help with salary data\",\n    model=llm_name,\n    tools=helpers.tools_sql,",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "model = ChatOpenAI(api_key=openai_key, model=llm_name)\n# for the weather function calling\nclient = OpenAI(api_key=openai_key)\n# Step 1: create the assistant\nassistant = client.beta.assistants.create(\n    name=\"Salary Assistant\",\n    description=\"Assistant to help with salary data\",\n    model=llm_name,\n    tools=helpers.tools_sql,\n)",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "client = OpenAI(api_key=openai_key)\n# Step 1: create the assistant\nassistant = client.beta.assistants.create(\n    name=\"Salary Assistant\",\n    description=\"Assistant to help with salary data\",\n    model=llm_name,\n    tools=helpers.tools_sql,\n)\n# create a thread\nthread = client.beta.threads.create()",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "assistant",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "assistant = client.beta.assistants.create(\n    name=\"Salary Assistant\",\n    description=\"Assistant to help with salary data\",\n    model=llm_name,\n    tools=helpers.tools_sql,\n)\n# create a thread\nthread = client.beta.threads.create()\nprint(thread.id)\nmessage = client.beta.threads.messages.create(",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "thread",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "thread = client.beta.threads.create()\nprint(thread.id)\nmessage = client.beta.threads.messages.create(\n    thread_id=thread.id,\n    role=\"user\",\n    content=\"\"\"What is the total overtime pay for the Alcohol Beverage Services department?\"\"\",\n)\nmessages = client.beta.threads.messages.list(thread_id=thread.id)\nprint(messages)\n# Run the assistant",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "message = client.beta.threads.messages.create(\n    thread_id=thread.id,\n    role=\"user\",\n    content=\"\"\"What is the total overtime pay for the Alcohol Beverage Services department?\"\"\",\n)\nmessages = client.beta.threads.messages.list(thread_id=thread.id)\nprint(messages)\n# Run the assistant\nrun = client.beta.threads.runs.create(\n    thread_id=thread.id,",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "messages = client.beta.threads.messages.list(thread_id=thread.id)\nprint(messages)\n# Run the assistant\nrun = client.beta.threads.runs.create(\n    thread_id=thread.id,\n    assistant_id=assistant.id,\n)\nimport time\nstart_time = time.time()\nstatus = run.status",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "run",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "run = client.beta.threads.runs.create(\n    thread_id=thread.id,\n    assistant_id=assistant.id,\n)\nimport time\nstart_time = time.time()\nstatus = run.status\nwhile status not in [\"completed\", \"cancelled\", \"expired\", \"failed\"]:\n    time.sleep(5)\n    run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "start_time",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "start_time = time.time()\nstatus = run.status\nwhile status not in [\"completed\", \"cancelled\", \"expired\", \"failed\"]:\n    time.sleep(5)\n    run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)\n    print(\n        \"Elapsed time: {} minutes {} seconds\".format(\n            int((time.time() - start_time) // 60), int((time.time() - start_time) % 60)\n        )\n    )",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "status = run.status\nwhile status not in [\"completed\", \"cancelled\", \"expired\", \"failed\"]:\n    time.sleep(5)\n    run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)\n    print(\n        \"Elapsed time: {} minutes {} seconds\".format(\n            int((time.time() - start_time) // 60), int((time.time() - start_time) % 60)\n        )\n    )\n    status = run.status",
+        "detail": "assis_api_sql_db_agent",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "kind": 5,
+        "importPath": "assis_api_sql_db_agent",
+        "description": "assis_api_sql_db_agent",
+        "peekOfCode": "messages = client.beta.threads.messages.list(thread_id=thread.id)\nprint(messages.model_dump_json(indent=2))",
+        "detail": "assis_api_sql_db_agent",
         "documentation": {}
     },
     {
